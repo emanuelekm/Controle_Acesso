@@ -1,4 +1,6 @@
-# 🔐 Sistema de Controle de Acesso com Arduino
+<p align="center">
+  <img src="banner_acesso.png" alt="Banner do Projeto" width="100%">
+</p>
 
 > Projeto desenvolvido para controle de entrada e saída de pessoas utilizando RFID, com exibição em display OLED e comunicação via Bluetooth.
 > 
