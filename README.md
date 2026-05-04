@@ -34,7 +34,9 @@ O impacto do projeto está no entendimento prático de conceitos fundamentais de
 
 ## Tecnologias
 
-* Python 3
+* C
+* C++
+* Wiring Framework
 
 ---
 
