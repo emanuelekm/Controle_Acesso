@@ -1,160 +1,99 @@
+# Controle de Acesso — Sistema de Autenticação
+
 <p align="center">
   <img src="banner_acesso.png" alt="Banner do Projeto" width="100%">
 </p>
 
-> Projeto desenvolvido para controle de entrada e saída de pessoas utilizando RFID, com exibição em display OLED e comunicação via Bluetooth.
-> 
+![Status](https://img.shields.io/badge/status-Concluído-green?style=for-the-badge)
+![C++](https://img.shields.io/badge/C%2B%2B-Programming-blue?style=for-the-badge&logo=c%2B%2B)
+![Wiring](https://img.shields.io/badge/Wiring-Framework-orange?style=for-the-badge)
+![Nível](https://img.shields.io/badge/nível-Básico-green?style=for-the-badge)
+![Tipo](https://img.shields.io/badge/tipo-Sistema%20de%20Autenticação-purple?style=for-the-badge)
 
 ---
 
-## 📖 Sobre o Projeto
+## Descrição
 
-Este projeto consiste em um **Sistema de Controle de Acesso** utilizando Arduino, capaz de:
+O **Controle de Acesso** é um sistema desenvolvido em Python que simula um mecanismo de autenticação e gerenciamento de permissões de usuários em ambiente de terminal.
 
-- Identificar usuários por meio de **cartões RFID**
-- Registrar **entrada e saída**
-- Diferenciar níveis de acesso:
-    - 👤 Colaborador
-    - 👔 Gerente
-    - ❌ Cartão desconhecido
-- Exibir informações em um **display OLED (I2C)**
-- Enviar dados via **Bluetooth** para smartphone ou notebook
-- Utilizar **LEDs e buzzer** para sinalização visual e sonora
+O problema abordado é a necessidade de restringir e controlar o acesso a determinadas funcionalidades ou recursos dentro de um sistema. Como solução, o projeto implementa um fluxo de autenticação com validação de usuários e controle de permissões, garantindo que apenas usuários autorizados possam acessar determinadas áreas.
+
+O impacto do projeto está no entendimento prático de conceitos fundamentais de segurança e autenticação, amplamente utilizados em sistemas reais.
 
 ---
 
-## ⚙️ Funcionalidades
+## Objetivo
 
-✔️ Leitura de cartões e TAGs RFID
-
-✔️ Identificação por endereço hexadecimal (HEX)
-
-✔️ Diferenciação de tipos de usuários
-
-✔️ Controle de entrada e saída com validação
-
-✔️ Exibição de dados no display OLED
-
-✔️ Comunicação via Bluetooth (HC-05)
-
-✔️ Feedback visual com LEDs
-
-✔️ Feedback sonoro com buzzer
+* Praticar lógica de autenticação e controle de acesso
+* Simular sistemas de login e validação de usuários
+* Trabalhar com estruturas condicionais e validações
+* Aplicar conceitos básicos de segurança
+* Desenvolver organização de código por responsabilidades
 
 ---
 
-## 🧠 Regras de Negócio
+## Tecnologias
 
-- Apenas o cartão utilizado na **entrada** pode ser usado para registrar a **saída**
-- O sistema identifica:
-    - Cartão válido de colaborador
-    - Cartão válido de gerente
-    - Cartão desconhecido
-- Cada ação gera:
-    - Mensagem no display
-    - Envio via Bluetooth
-    - Sinal visual (LED)
-    - Sinal sonoro (buzzer)
+* Python 3
 
 ---
 
-## 🧩 Componentes Utilizados
+## Preview
 
-- Arduino UNO ou Mega 2560
-- Módulo RFID MFRC522
-- Display OLED I2C
-- Módulo Bluetooth HC-05
-- LEDs (verde e vermelho)
-- Buzzer
-- Resistores
-- Jumpers (cabos de conexão)
+<!-- Sugestões:
+- Tela de login
+- Mensagens de acesso permitido/negado
+- Fluxo de autenticação -->
 
 ---
 
-## 🔌 Tecnologias Utilizadas
+## Como executar
 
-- Arduino (C/C++)
-- Comunicação Serial
-- Protocolo I2C
-- Bluetooth (Serial)
+```bash
+# Clone o repositório
+git clone https://github.com/emanuelekm/Controle_Acesso.git
 
----
+# Acesse a pasta
+cd Controle_Acesso
 
-## 📲 Comunicação Bluetooth
-
-As informações exibidas no display também são enviadas via Bluetooth para:
-
-- 📱 Smartphone (ex: Serial Bluetooth Terminal)
-- 💻 Notebook (ex: PuTTY)
-
----
-
-## 📺 Exemplo de Saída
-
-```
-Entrada autorizada
-ID: A1 B2 C3 D4
-
-Saída registrada
-ID: A1 B2 C3 D4
-
-Cartão desconhecido
-ID: FF EE DD CC
+# Execute o sistema
+python arquivo.py
 ```
 
 ---
 
-## 🚨 Sinalizações
+## Funcionalidades
 
-| Situação | LED | Buzzer |
-| --- | --- | --- |
-| Entrada/Saída válida | Verde | Som curto |
-| Cartão desconhecido | Vermelho | Som de alerta |
-
----
-
-## 📦 Estrutura do Projeto
-
-```
-📁 sistema-controle-acesso
- ┣ 📄 codigo.ino
- ┣ 📄 README.md
- ┣ 📁 imagens/
- ┗ 📁 videos/
-```
+* Sistema de login com validação de usuário
+* Controle de acesso baseado em permissões
+* Verificação de credenciais
+* Restrição de funcionalidades conforme o tipo de usuário
+* Feedback de acesso permitido ou negado
 
 ---
 
-## 🎯 Objetivo Acadêmico
+## Aprendizados
 
-Projeto desenvolvido como atividade prática com o objetivo de aplicar conceitos de:
-
-- Sistemas embarcados
-- Automação
-- Integração de hardware
-- Comunicação entre dispositivos
-
----
-
-## 📸 Entrega
-
-- Fotos do sistema em funcionamento
-- Vídeos demonstrando o uso
-- Código comentado e organizado
+* Implementação de autenticação simples
+* Validação de dados de entrada
+* Controle de fluxo com base em permissões
+* Organização de lógica de segurança
+* Simulação de sistemas reais de acesso
 
 ---
 
-## 🚀 Melhorias Futuras
+## Melhorias Futuras
 
-- Integração com banco de dados
-- Interface web ou mobile
-- Registro de logs em nuvem
-- Sistema de autenticação mais robusto
+* Criptografia de senhas (hash)
+* Integração com banco de dados (MySQL/SQLite)
+* Sistema de cadastro de usuários
+* Interface gráfica ou web
+* Controle de sessão
 
 ---
 
-## 👩‍💻 Autoria
+## Links
 
-**Emanuele Kmiecik**
+* Repositório: https://github.com/emanuelekm/Controle_Acesso.git
 
-Técnica em Desenvolvimento de Sistemas
+
